@@ -1,0 +1,25 @@
+#content {
+    background-color: blue;
+    width: 100vw;
+    height: 100vh;
+}
+
+#navContainer {
+    background-color: aqua;
+    border: 2px solid orange;
+    width: 100vw;
+    height: 5vh;
+}
+
+.flexContainer {
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    height: 100%;
+}
+
+#navLogoContainer {
+    margin-right: auto;
+}
