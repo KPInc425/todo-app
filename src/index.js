@@ -7,10 +7,27 @@ import './style.css';
 const app = (() => {
     console.log("TESTING: KPINC425");
 
-    // TESTING
-    let displaynavDOM = DisplayNavDOM();
-    let displayNoteDOM = DisplayNoteDOM();
-    let note = Note();
+    let noteLibraryData = [];
 
+    //First Display
+    DisplayNavDOM();
+    DisplayNoteDOM(noteLibraryData);
+
+    // TESTING
+    let testNoteData = {
+        title: "Testing",
+        description: "Testing Description....", 
+        list: ["Pick up milk", "start Yoga", "List item 3"],
+        dueDate: "10/31/21",
+        priority: "HIGH", 
+    }
+
+    console.log(testNoteData.priority);
+    let testNote = Note(testNoteData.title, testNoteData.description, testNoteData.list, testNoteData.dueDate, testNoteData.priority);
+    // console.log(testNote);
+    noteLibraryData.push(testNote);
+
+    // DisplayNavDOM();
+    DisplayNoteDOM(noteLibraryData);
 })();
 

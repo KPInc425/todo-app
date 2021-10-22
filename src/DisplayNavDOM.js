@@ -1,11 +1,10 @@
 function DisplayNavDOM() {
-    console.log("DisplayNAVDOM function Called");
+    console.log("DisplayNavDOM function Called");
 
     const body = document.querySelector('body');
-
     const navContainer = document.createElement('div');
     navContainer.id = "navContainer";
-    navContainer.classList.add('flexContainer');
+    navContainer.classList.add('flexContainerNav');
 
     const navLogoContainer = document.createElement('div');
     navLogoContainer.id = "navLogoContainer";
@@ -15,7 +14,7 @@ function DisplayNavDOM() {
     navLogoContainer.appendChild(navLogoImg);
 
     const btnContainer = document.createElement('div');
-    btnContainer.classList.add('flexContainer');
+    btnContainer.classList.add('flexContainerNav');
 
     const btn1 = document.createElement('button');
     btn1.textContent = "btn1";
