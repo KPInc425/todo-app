@@ -1,14 +1,23 @@
+html {
+    background-color: grey;
+}
+
 #content {
     background-color: blue;
-    width: 100vw;
-    height: 100vh;
+    width: 95vw;
+    height: fit-content;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 4px;
 }
 
 #navContainer {
     background-color: aqua;
     border: 2px solid orange;
-    width: 100vw;
+    width: 98vw;
+    margin: auto;
     height: 5vh;
+    border-radius: 4px;
 }
 
 .flexContainerNav {
@@ -33,7 +42,7 @@
     justify-content: flex-end; */
     flex-wrap: wrap;
     border: 1px solid red;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .card {
@@ -41,8 +50,9 @@
     box-shadow: 0 4px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 23vw;
-    min-height: 23vh;
+    height: fit-content;
     margin: 25px;
+    background-color: bisque;
 }
 
 .card:hover {

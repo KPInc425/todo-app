@@ -1,4 +1,4 @@
-function DisplayNoteDom(noteLibraryData) {
+function DisplayNoteLibraryDOM(noteLibraryData) {
     console.log("DisplayNoteDOM function Called.");
     console.log(noteLibraryData);
 
@@ -17,10 +17,11 @@ function DisplayNoteDom(noteLibraryData) {
 
         for (let note of noteLibraryData) {
             // perhaps bringing the vars out of the block might be preferable?
-            var noteCard = document.createElement('div');
+            const noteCard = document.createElement('div');
             noteCard.classList.add('card');
+            noteCard.setAttribute('data-index', index);
 
-            var noteInfoContainer = document.createElement('div');
+            const noteInfoContainer = document.createElement('div');
             noteInfoContainer.classList.add('infoContainer');
 
             const noteTitle = document.createElement('p');
@@ -44,7 +45,6 @@ function DisplayNoteDom(noteLibraryData) {
 
             }
 
-
             const noteDueDateLabel = document.createElement('p');
             noteDueDateLabel.textContent = "~Due Date~";
 
@@ -61,6 +61,30 @@ function DisplayNoteDom(noteLibraryData) {
             const noteDateCreated = document.createElement('p'); 
             noteDateCreated.textContent = note.dateCreated;
 
+            // Buttons for cards
+            const btnContainer = document.createElement('div');
+            btnContainer.classList.add('btnContainer');
+            const btnEdit = document.createElement('button');
+            btnEdit.textContent = "Edit";
+            btnEdit.classList.add('btnEdit');
+            btnEdit.setAttribute('data-index', index);
+
+            const btnDelete = document.createElement('button');
+            btnDelete.textContent = "Delete";
+            btnEdit.classList.add('btnDelete');
+            btnDelete.setAttribute('data-index', index);
+
+            // Add Checklist/Lists
+            // if checklist doesn't exist
+            //      isChecklist = True
+            //      call createChecklist Function
+            // else 
+            //      remove list
+            //      isChecklist = false
+
+            btnContainer.appendChild(btnEdit);
+            btnContainer.appendChild(btnDelete);
+
             noteInfoContainer.appendChild(noteTitle);
             noteInfoContainer.appendChild(noteDescription);
             if (note.list.length > 0) {
@@ -71,16 +95,17 @@ function DisplayNoteDom(noteLibraryData) {
             noteInfoContainer.appendChild(notePriority);
             noteInfoContainer.appendChild(noteDateCreatedLabel);
             noteInfoContainer.appendChild(noteDateCreated);
+            noteInfoContainer.appendChild(btnContainer);
+            noteCard.appendChild(noteInfoContainer);
+            mainContainer.appendChild(noteCard);
 
+            index++;
         };
-
-        noteCard.appendChild(noteInfoContainer);
-        mainContainer.appendChild(noteCard);
+        
     };
 
     body.appendChild(mainContainer);
 
-
 }    
 
-export default DisplayNoteDom;
+export default DisplayNoteLibraryDOM;

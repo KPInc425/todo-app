@@ -1,4 +1,4 @@
-function Note(title, description, list, dueDate, priority) {
+function Note(title, description, list, dueDate, priority, project) {
     //testing 
     console.log("NOTE HAS BEEN CALLED/LOADED.")
     title = title;
@@ -7,6 +7,7 @@ function Note(title, description, list, dueDate, priority) {
     const dateCreated = Date().split(' ', 5).join(' ');
     dueDate = dueDate;
     priority = priority;
+    project = project;
 
     return {
         title,
@@ -15,6 +16,7 @@ function Note(title, description, list, dueDate, priority) {
         dateCreated,
         dueDate,
         priority,
+        project,
     };
 };
 
