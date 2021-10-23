@@ -1,33 +1,45 @@
 function DisplayNoteLibraryDOM(noteLibraryData) {
     console.log("DisplayNoteDOM function Called.");
-    console.log(noteLibraryData);
+    // console.log(noteLibraryData);
 
     const body = document.querySelector('body');
-    
     const mainContainer = document.querySelector('#content');
     mainContainer.classList.add("flexContainerMain");
-    //TESTING
+    //TESTING if there are no notes....
     mainContainer.textContent = "Testing Main Container Here!";
 
     console.log("noteLibraryData.length: " + Object.keys(noteLibraryData).length);
+    // Check if there are notes in the objectArray
     if (Object.keys(noteLibraryData).length !== 0) {
         let index = 0;
 
+        // Clear container to prevent addition
         mainContainer.innerHTML = "";
 
+        // Project Name Label
+        const projectTitleLabelContainer = document.createElement('div');
+        projectTitleLabelContainer.classList.add("labelContainer");
+        const projectTitleLabel = document.createElement('h2');
+        projectTitleLabel.classList.add("h2Title");
+        projectTitleLabel.textContent = noteLibraryData[0].project;
+
+        projectTitleLabelContainer.appendChild(projectTitleLabel);
+        body.appendChild(projectTitleLabelContainer);
+
         for (let note of noteLibraryData) {
-            // perhaps bringing the vars out of the block might be preferable?
+            // Note container
             const noteCard = document.createElement('div');
             noteCard.classList.add('card');
             noteCard.setAttribute('data-index', index);
 
+            // Note data container
             const noteInfoContainer = document.createElement('div');
             noteInfoContainer.classList.add('infoContainer');
 
+            // Note Data
             const noteTitle = document.createElement('p');
             noteTitle.textContent = note.title;
             noteTitle.classList.add("cardTitle");
-
             const noteDescription = document.createElement('p');
             noteDescription.textContent = note.description;
 
@@ -44,7 +56,6 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
                 }
 
             }
-
             const noteDueDateLabel = document.createElement('p');
             noteDueDateLabel.textContent = "~Due Date~";
 

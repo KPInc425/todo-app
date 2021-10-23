@@ -11,6 +11,12 @@ html {
     border-radius: 4px;
 }
 
+.labelContainer {
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+}
+
 #navContainer {
     background-color: aqua;
     border: 2px solid orange;

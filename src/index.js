@@ -63,6 +63,18 @@ const app = (() => {
     noteLibraryData.push(testNote2);
     noteLibraryData.push(testNote4);
     noteLibraryData.push(testNote3);
+    noteLibraryData.push(testNote);
+    noteLibraryData.push(testNote2);
+    noteLibraryData.push(testNote4);
+    noteLibraryData.push(testNote3);
+    noteLibraryData.push(testNote);
+    noteLibraryData.push(testNote2);
+    noteLibraryData.push(testNote4);
+    noteLibraryData.push(testNote3);
+    noteLibraryData.push(testNote);
+    noteLibraryData.push(testNote2);
+    noteLibraryData.push(testNote4);
+    noteLibraryData.push(testNote3);
     DisplayProjectsDOM(noteLibraryData);
 
     // // DisplayNavDOM();
