@@ -6,3 +6,8 @@ Implementing a Todo List app.
 List should be able to be separated by project, ability to see all todos in each project, the ability to expand each todo to see/edit details, ability to delete todos.
 
 Sessions should be saved locally.
+
+#Todo
+-Hide Most of Todo unless card clicked on 
+-Edit already made note 
+-Styling
