@@ -75,3 +75,16 @@ html {
 .cardTitle {
     border-bottom: solid 1px black;
 }
+
+#newTodoContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;  
+    margin-top: 25%;
+    background-color: aqua;
+    border: 2px solid green;  
+    text-align: center;
+    width: 50%;
+    padding: 25px;
+}

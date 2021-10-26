@@ -1,5 +1,6 @@
 function SplitArray(libraryData, inputIndex) {
     console.log("SplitArray Function Called.");
+    console.log("INPUT INDEX: " + inputIndex);
 
     let tmpArray = [];
 

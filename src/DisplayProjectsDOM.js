@@ -17,7 +17,7 @@ function DisplayProjectsDOM(noteLibraryData) {
         mainContainer.innerHTML = "";
 
         // Create Project Arrays
-        let sortedNoteLibraryData = SortProjectArrays(noteLibraryData);
+        const sortedNoteLibraryData = SortProjectArrays(noteLibraryData);
         console.log(sortedNoteLibraryData);
 
         let projectTitleString = "";
@@ -61,7 +61,7 @@ function DisplayProjectsDOM(noteLibraryData) {
 
             const btnDelete = document.createElement('button');
             btnDelete.textContent = "Delete";
-            btnEdit.classList.add('btnDelete');
+            btnDelete.classList.add('btnDelete');
             btnDelete.setAttribute('data-index', index);
 
             btnContainer.appendChild(btnEdit);

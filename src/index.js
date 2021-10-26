@@ -11,7 +11,7 @@ const app = (() => {
     let noteLibraryData = [];
 
     //First Display
-    DisplayNavDOM();
+    DisplayNavDOM(noteLibraryData);
     DisplayProjectsDOM(noteLibraryData);
     // DisplayNoteLibraryDOM(noteLibraryData);
 
