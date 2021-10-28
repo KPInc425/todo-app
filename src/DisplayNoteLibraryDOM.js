@@ -1,3 +1,6 @@
+import { EditTodoButtonAddEventListeners } from "./AddEventListeners.js";
+
+
 function DisplayNoteLibraryDOM(noteLibraryData) {
     console.log("DisplayNoteDOM function Called.");
     // console.log(noteLibraryData);
@@ -14,6 +17,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
         let index = 0;
 
         // Clear container to prevent addition
+        // body.innerText = "";
         mainContainer.innerHTML = "";
 
         // Project Name Label
@@ -24,7 +28,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
         projectTitleLabel.textContent = noteLibraryData[0].project;
 
         projectTitleLabelContainer.appendChild(projectTitleLabel);
-        body.appendChild(projectTitleLabelContainer);
+        mainContainer.appendChild(projectTitleLabelContainer);
 
         for (let note of noteLibraryData) {
             // Note container
@@ -116,6 +120,11 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
     };
 
     body.appendChild(mainContainer);
+
+    // Add functionality to Edit buttons on todo cards
+    EditTodoButtonAddEventListeners();
+
+
 
 }    
 

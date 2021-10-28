@@ -6,7 +6,7 @@ function DisplayAddNewTodo(libraryData) {
 
     // Create editable form 
     const newTodoContainer = document.createElement('div');
-    newTodoContainer.id = "newTodoContainer";
+    newTodoContainer.classList.add("todoContainer");
 
     const containerLabel = document.createElement('h1');
     containerLabel.textContent = "What's new Todo?";

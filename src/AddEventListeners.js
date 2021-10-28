@@ -2,6 +2,8 @@ import DisplayNoteLibraryDOM from "./DisplayNoteLibraryDOM.js";
 import SplitArray from "./SplitArray.js";
 import DisplayAddNewTodo from "./DisplayAddNewTodoDOM.js"
 import CreateNewTodo from "./CreateNewTodo.js";
+import DisplayEditTodo from "./DisplayEditTodoDOM";
+import AddEditedTodoNote from "./AddEditedTodoNote.js";
 
 // Adds event listeners to project cards
 function ProjectCardsAddEventListeners(libraryData) {
@@ -11,8 +13,6 @@ function ProjectCardsAddEventListeners(libraryData) {
     console.log(projectCardNodeArray);
     projectCardNodeArray.forEach((div) => {
         div.addEventListener('click', () => {
-            // console.log("Click!");
-            // console.log(div);
             let projectIndex = div.getAttribute('data-index');
             console.log(projectIndex);
 
@@ -23,6 +23,7 @@ function ProjectCardsAddEventListeners(libraryData) {
             
             // Display notes related to project
             DisplayNoteLibraryDOM(projectNoteArray);
+            // Needed to prevent capturing/bubbling when btn's pressed.
         })
     });
 };
@@ -56,16 +57,90 @@ function AddNewTodoAddEventListener(libraryData) {
     });
 }
 
-function EditButtonAddEventListeners() {
+function EditTodoButtonAddEventListeners(libraryData) {
     const editBtnNodeArray = document.querySelectorAll('.btnEdit');
     console.log(editBtnNodeArray);
 
     editBtnNodeArray.forEach((btn) => {
         // Display Editable form to edit todo note
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            console.log("Click!");
+            e.stopPropagation();
+
+            DisplayEditTodo();
+            // addListItemEventListener();
+            
+
+            
+            //call module to display editable note
+
+
+        })
+    })
+
+    // NEW EVENT LISTENERS SHOULD BE CALLED FROM DOM?
+    // function addListItemEventListener() {
+    //     console.log("addListItemEventListener Called!");
+    // }
+}
+
+function AddEditedTodoNoteEventListener() {
+    const btnAddEditedToNote = document.querySelector('#btnAddEditedTodo');
+    btnAddEditedToNote.addEventListener('click', () => {
+            console.log("Add Button Clicked!");
+            // Add edited todo note data to noteLibrary
+            AddEditedTodoNote(noteLibraryData);
+    })
+
+}
+
+function DeleteTodoButtonAddEventListeners() {
+    const deleteBtnNodeArray = document.querySelectorAll('.btnDelete');
+    console.log(deleteBtnNodeArray);
+
+    deleteBtnNodeArray.forEach((btn) => {
+        // Display Editable form to edit todo note
+        btn.addEventListener('click', (e) => {
             console.log("Click!");
 
+            
+
+            e.stopPropagation();
             //call module to display editable note
+
+
+        })
+    })
+}
+
+function DeleteProjectButtonAddEventListeners() {
+    const deleteBtnNodeArray = document.querySelectorAll('.btnDelete');
+    console.log(deleteBtnNodeArray);
+
+    deleteBtnNodeArray.forEach((btn) => {
+        // Display Editable form to edit todo note
+        btn.addEventListener('click', (e) => {
+            console.log("Click!");
+
+            
+
+            e.stopPropagation();
+            //call module to display editable note
+
+
+        })
+    })
+}
+
+function EditProjectButtonAddEventListeners(libraryData) {
+    const editBtnNodeArray = document.querySelectorAll('.btnProjectEdit');
+    console.log(editBtnNodeArray);
+
+    editBtnNodeArray.forEach((btn) => {
+        // Display Editable form to edit todo note
+        btn.addEventListener('click', (e) => {
+            console.log("Click!");
+            e.stopPropagation();
 
 
         })
@@ -76,5 +151,9 @@ export {
     ProjectCardsAddEventListeners,
     NewTodoAddEventListeners,
     AddNewTodoAddEventListener,
+    EditTodoButtonAddEventListeners,
+    DeleteProjectButtonAddEventListeners,
+    EditProjectButtonAddEventListeners,
+    AddEditedTodoNoteEventListener,
 };
 

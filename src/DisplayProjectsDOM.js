@@ -1,5 +1,5 @@
 import SortProjectArrays from "./SortProjectArrays";
-import { ProjectCardsAddEventListeners } from "./AddEventListeners";
+import { ProjectCardsAddEventListeners, EditProjectButtonAddEventListeners, DeleteProjectButtonAddEventListeners } from "./AddEventListeners";
 
 function DisplayProjectsDOM(noteLibraryData) {
     console.log("DisplayProjectsDOM function called")
@@ -56,7 +56,7 @@ function DisplayProjectsDOM(noteLibraryData) {
             btnContainer.classList.add('btnContainer');
             const btnEdit = document.createElement('button');
             btnEdit.textContent = "Edit";
-            btnEdit.classList.add('btnEdit');
+            btnEdit.classList.add('btnProjectEdit');
             btnEdit.setAttribute('data-index', index);
 
             const btnDelete = document.createElement('button');
@@ -119,6 +119,8 @@ function DisplayProjectsDOM(noteLibraryData) {
 
     body.appendChild(mainContainer);
     ProjectCardsAddEventListeners(noteLibraryData);
+    EditProjectButtonAddEventListeners();
+    DeleteProjectButtonAddEventListeners();
 }
 
 export default DisplayProjectsDOM;
