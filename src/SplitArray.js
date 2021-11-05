@@ -1,6 +1,6 @@
 function SplitArray(libraryData, inputIndex) {
     console.log("SplitArray Function Called.");
-    console.log("INPUT INDEX: " + inputIndex);
+    // console.log("INPUT INDEX: " + inputIndex);
 
     let tmpArray = [];
 
@@ -12,17 +12,27 @@ function SplitArray(libraryData, inputIndex) {
         if (projectTitle == "") {
             projectTitle = note.project;
         }
-
+        // console.log("projectTitle: " + projectTitle);
+        // console.log("note.project: " + note.project);
         if (projectTitle == note.project) {
+            // console.log("Match!");
+            // console.log("inputIndex: " + inputIndex);
+            // console.log("index: " + index);
             if (inputIndex == index) {
+                // console.log("Success!!");
                 // console.log(note);
                 tmpArray.push(note);
+                // console.log("Pushed to Array");
                 continue;
+            } else {
+                // console.log("Failed!");
+                projectTitle = "";
+                index++;
             }
         } else {
             projectTitle = note.project;
             index++;
-            console.log(index);
+            // console.log("index: " + index);
         }   
     }
 

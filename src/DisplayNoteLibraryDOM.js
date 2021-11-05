@@ -11,7 +11,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
     //TESTING if there are no notes....
     mainContainer.textContent = "Testing Main Container Here!";
 
-    console.log("noteLibraryData.length: " + Object.keys(noteLibraryData).length);
+    // console.log("noteLibraryData.length: " + Object.keys(noteLibraryData).length);
     // Check if there are notes in the objectArray
     if (Object.keys(noteLibraryData).length !== 0) {
         let index = 0;

@@ -1,7 +1,8 @@
 import DisplayNoteLibraryDOM from "./DisplayNoteLibraryDOM";
 
-function AddEditedTodoNote(libraryData) {
+function AddEditedTodoNote(libraryData, index) {
     console.log("AddEditedTodoNote function called...")
+
 
 
 

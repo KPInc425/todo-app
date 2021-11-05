@@ -83,7 +83,8 @@ const app = (() => {
     
     DisplayProjectsDOM(noteLibraryData);
     // Add eventListeners to current displayed elements
-    ProjectCardsAddEventListeners();
+    ProjectCardsAddEventListeners(noteLibraryData);
+
     EditProjectButtonAddEventListeners();
     DeleteProjectButtonAddEventListeners();
 

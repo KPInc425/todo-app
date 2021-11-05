@@ -38,6 +38,7 @@ function DisplayProjectsDOM(noteLibraryData) {
                 console.log(projectTitleString);
             }
 
+            // Display project
             const projectCard = document.createElement('div');
             projectCard.classList.add('card');
             projectCard.classList.add('projectCard');
