@@ -1,5 +1,4 @@
 import SortProjectArrays from "./SortProjectArrays";
-import { ProjectCardsAddEventListeners, EditProjectButtonAddEventListeners, DeleteProjectButtonAddEventListeners } from "./AddEventListeners";
 
 function DisplayProjectsDOM(noteLibraryData) {
     console.log("DisplayProjectsDOM function called")
@@ -24,13 +23,16 @@ function DisplayProjectsDOM(noteLibraryData) {
 
         console.log(projectTitleString);
 
+        // Display each note in library that matches project clicked on
         for (let note of sortedNoteLibraryData) {
+            //check if previous todoNote had the same projectName
             if (index === 0) {
                 projectTitleString = note.project;
                console.log(projectTitleString);
             } else if (note.project === projectTitleString) {
                 console.log("CONTINUE");
                 continue;
+            // Change projectTitleString if its not the same as previous
             } else {
                 projectTitleString = note.project;
                 console.log(projectTitleString);
@@ -77,6 +79,7 @@ function DisplayProjectsDOM(noteLibraryData) {
             index++;
         }
 
+    // Display default project if no todoNotes already in array
     } else {
         mainContainer.innerHTML = "";
 
@@ -118,9 +121,9 @@ function DisplayProjectsDOM(noteLibraryData) {
     }
 
     body.appendChild(mainContainer);
-    ProjectCardsAddEventListeners(noteLibraryData);
-    EditProjectButtonAddEventListeners();
-    DeleteProjectButtonAddEventListeners();
+    // ProjectCardsAddEventListeners(noteLibraryData);
+    // EditProjectButtonAddEventListeners();
+    // DeleteProjectButtonAddEventListeners();
 }
 
 export default DisplayProjectsDOM;

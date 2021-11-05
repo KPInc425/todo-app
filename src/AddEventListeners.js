@@ -17,13 +17,13 @@ function ProjectCardsAddEventListeners(libraryData) {
             console.log(projectIndex);
 
             //Split Array based on project
-            const projectNoteArray = SplitArray(libraryData, projectIndex);
+            // const projectNoteArray = SplitArray(libraryData, projectIndex);
 
-            console.log(projectNoteArray);
+            // console.log(projectNoteArray);
             
-            // Display notes related to project
-            DisplayNoteLibraryDOM(projectNoteArray);
-            // Needed to prevent capturing/bubbling when btn's pressed.
+            // // Display notes related to project
+            // DisplayNoteLibraryDOM(projectNoteArray);
+            // // Needed to prevent capturing/bubbling when btn's pressed.
         })
     });
 };

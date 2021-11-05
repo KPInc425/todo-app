@@ -1,3 +1,5 @@
+import GenerateUniqueID from "./GenerateUniqueID.js";
+
 function Note(title, description, list, dueDate, priority, project) {
     //testing 
     console.log("NOTE HAS BEEN CALLED/LOADED.")
@@ -8,6 +10,8 @@ function Note(title, description, list, dueDate, priority, project) {
     dueDate = dueDate;
     priority = priority;
     project = project;
+    const masterIndex = GenerateUniqueID();
+
 
     return {
         title,
@@ -17,6 +21,7 @@ function Note(title, description, list, dueDate, priority, project) {
         dueDate,
         priority,
         project,
+        masterIndex,
     };
 };
 
