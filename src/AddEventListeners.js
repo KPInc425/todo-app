@@ -67,7 +67,13 @@ function EditTodoButtonAddEventListeners(libraryData) {
             console.log("Click!");
             e.stopPropagation();
 
-            DisplayEditTodo();
+            // retreive edited note index
+            let index = btn.getAttribute('data-index');
+            console.log("Index: " + index);
+            console.log("libraryData Below");
+            console.log(libraryData);
+
+            DisplayEditTodo(libraryData, index);
             // addListItemEventListener();
             
 
@@ -84,11 +90,12 @@ function EditTodoButtonAddEventListeners(libraryData) {
     // }
 }
 
-function AddEditedTodoNoteEventListener() {
+function AddEditedTodoNoteEventListener(noteLibraryData) {
     const btnAddEditedToNote = document.querySelector('#btnAddEditedTodo');
     btnAddEditedToNote.addEventListener('click', () => {
             console.log("Add Button Clicked!");
             // Add edited todo note data to noteLibrary
+
             AddEditedTodoNote(noteLibraryData);
     })
 

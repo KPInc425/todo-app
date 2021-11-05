@@ -8,6 +8,7 @@ List should be able to be separated by project, ability to see all todos in each
 Sessions should be saved locally.
 
 #Todo
+-Add Cancel button to new Todo and Editable form.
 -Format editable todo form 
 -add functionality to unused buttons
 -Hide Most of Todo unless card clicked on 

@@ -122,7 +122,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
     body.appendChild(mainContainer);
 
     // Add functionality to Edit buttons on todo cards
-    EditTodoButtonAddEventListeners();
+    EditTodoButtonAddEventListeners(noteLibraryData);
 
 
 

@@ -1,33 +1,48 @@
 import { AddEditedTodoNoteEventListener } from "./AddEventListeners";
 
-function DisplayEditTodo() {
+function DisplayEditTodo(libraryData, index) {
     const mainContainer = document.querySelector('#content');
 
     const editTodoContainer = document.createElement('div');
     editTodoContainer.classList.add("todoContainer");
 
+    //Form Label
+    const headerItemContainer = document.createElement('div');
+    headerItemContainer.classList.add("formItem");
     const containerLabel = document.createElement('h1');
     containerLabel.textContent = "Edit the Details?";
+    headerItemContainer.appendChild(containerLabel);
 
     //Title Input
+    const titleItemContainer = document.createElement('div');
+    titleItemContainer.classList.add("formItem");
     const inputTitleLabel = document.createElement('label');
     inputTitleLabel.textContent = "Title";
     const inputTitle = document.createElement('input');
     inputTitle.type = "text";
     inputTitle.id = "inputTodoTitle";
+    titleItemContainer.appendChild(inputTitleLabel);
+    titleItemContainer.appendChild(inputTitle);
+
+
 
     // Description Input
+    const descriptionItemContainer = document.createElement('div');
+    descriptionItemContainer.classList.add("formItem");
     const inputDescriptionLabel = document.createElement('label');
     inputDescriptionLabel.textContent = "Description";
     const inputDescription = document.createElement('input');
     inputDescription.type = "text";
     inputDescription.id = "inputTodoDescription";
+    descriptionItemContainer.appendChild(inputDescriptionLabel);
+    descriptionItemContainer.appendChild(inputDescription);
 
     // List Input
-    // next container used to hold list input and button to add new list item
-    const inputListContainer = document.createElement('div');
+    
     // used to contain only list items
-    const ListContainer = document.createElement('div');
+    const listItemContainer = document.createElement('div');
+    listItemContainer.classList.add("listItem");
+
     const inputListLabel = document.createElement('label');
     inputListLabel.textContent = "List item";
     const inputList = document.createElement('input');
@@ -39,64 +54,60 @@ function DisplayEditTodo() {
     btnAddNewListItem.id = "addNewListItem";
 
     // Add Lists to list container
-    ListContainer.appendChild(inputListLabel);
-    ListContainer.appendChild(inputList);
-    inputListContainer.appendChild(ListContainer);
-    //compine List container with button
-    inputListContainer.appendChild(btnAddNewListItem);
-
-
+    listItemContainer.appendChild(inputListLabel);
+    listItemContainer.appendChild(inputList);
+    listItemContainer.appendChild(btnAddNewListItem);
 
     // Due Date 
+    const duedateItemContainer = document.createElement('div');
+    duedateItemContainer.classList.add("formItem");
     const inputDueDateLabel = document.createElement('label');
     inputDueDateLabel.textContent = "DueDate";
     const inputDueDate = document.createElement('input');
     inputDueDate.type = "date";
     inputDueDate.id = "inputTodoDueDate";
-
+    duedateItemContainer.appendChild(inputDueDateLabel);
+    duedateItemContainer.appendChild(inputDueDate);
 
     // Priority 
     // Change this to radios
+    const priorityItemContainer = document.createElement('div');
+    priorityItemContainer.classList.add("formItem");
     const inputPriorityLabel = document.createElement('label');
     inputPriorityLabel.textContent = "Priority";
     const inputPriority = document.createElement('input');
     inputPriority.type = "text";
     inputPriority.id = "inputTodoPriority";
+    priorityItemContainer.appendChild(inputPriorityLabel);
+    priorityItemContainer.appendChild(inputPriority);
 
     // Project 
-
+    const projectItemContainer = document.createElement('div');
+    projectItemContainer.classList.add("formItem");
     const inputProjectLabel = document.createElement('label');
     inputProjectLabel.textContent = "Project";
     const inputProject = document.createElement('input');
     inputProject.type = "text";
     inputProject.id = "inputTodoProject";
+    projectItemContainer.appendChild(inputProjectLabel);
+    projectItemContainer.appendChild(inputProject);
 
+    // Edit Todo Note Button
     const btnAdd = document.createElement('button');
     btnAdd.id = "btnAddEditedTodo";
     btnAdd.textContent = "Get it Done!";
 
-    editTodoContainer.appendChild(containerLabel);
-    editTodoContainer.appendChild(inputTitleLabel);
-    editTodoContainer.appendChild(inputTitle);
+    // Appending elements to DOM
 
-    editTodoContainer.appendChild(inputDescriptionLabel);
-    editTodoContainer.appendChild(inputDescription);
-
-    editTodoContainer.appendChild(inputListContainer);
-
-    editTodoContainer.appendChild(inputDueDateLabel);
-    editTodoContainer.appendChild(inputDueDate);
-
-    editTodoContainer.appendChild(inputPriorityLabel);
-    editTodoContainer.appendChild(inputPriority);
-
-    editTodoContainer.appendChild(inputProjectLabel);
-    editTodoContainer.appendChild(inputProject);
-
+    editTodoContainer.appendChild(headerItemContainer);
+    editTodoContainer.appendChild(titleItemContainer);
+    editTodoContainer.appendChild(descriptionItemContainer);
+    editTodoContainer.appendChild(listItemContainer);
+    editTodoContainer.appendChild(duedateItemContainer);
+    editTodoContainer.appendChild(priorityItemContainer);
+    editTodoContainer.appendChild(projectItemContainer);
     editTodoContainer.appendChild(btnAdd);
-
     mainContainer.appendChild(editTodoContainer);
-
     AddEditedTodoNoteEventListener();
 
 }

@@ -77,15 +77,72 @@ html {
     border-bottom: solid 1px black;
 }
 
+
+/* Edit Todo Form Styling */
 .todoContainer {
     position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     left: 0;
     right: 0;
     margin: auto;  
     margin-top: 25%;
     background-color: aqua;
     border: 2px solid green;  
-    text-align: center;
     width: 50%;
     padding: 25px;
+
+    /* font-size: 1em;
+    padding: 0.5em;
+    border-radius: 1em;
+    font-family: sans-serif; */
 }
+
+/* label, input, button {
+    font-size: inherit;
+    padding: 0.2em;
+    margin: 0.1em 0.2em; */
+    /* the following ensures they're all using the same box-model for rendering */
+    /*-moz-box-sizing: content-box;*/ /* or `border-box` */
+    /* -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+} */
+
+
+.formItem {
+    flex: 1 0 100%;
+}
+
+.formItem > h1 {
+    text-align: center;
+}
+
+/* .listItem > button {
+    height: 26px;
+    width: 20px;
+    padding: 0;
+    margin: 1.9px 0 0 -5px;
+
+} */
+
+.listItem > input {
+    width: 187px;
+}
+
+label {
+    display: inline-block;
+    width: 110px;
+}
+
+input {
+    display: inline-block;
+    width: 210px;
+    height: 25px;
+    padding: 0;
+}
+
+/* #btnAddEditedTodo {
+    margin-left: auto;
+    margin-right: 30px;
+} */
