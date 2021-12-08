@@ -7,43 +7,31 @@ function SplitArray(libraryData, inputIndex) {
     // console.log(libraryData);
     // console.log(inputIndex);
     let projectTitle = "";
-    let projectIndex = 0;
     let index = 0;
     for (let note of libraryData) {
-        console.log(note);
-
-        //First Iteration
         if (projectTitle == "") {
             projectTitle = note.project;
         }
-        
         // console.log("projectTitle: " + projectTitle);
-        console.log(note.project);
+        // console.log("note.project: " + note.project);
         if (projectTitle == note.project) {
             // console.log("Match!");
             // console.log("inputIndex: " + inputIndex);
             // console.log("index: " + index);
-            if (inputIndex == projectIndex) {
+            if (inputIndex == index) {
                 // console.log("Success!!");
                 // console.log(note);
-                // NOT SURE THIS IS EVEN DOING ANYTHING DEBUG!
                 tmpArray.push(note);
-                index++;
                 // console.log("Pushed to Array");
                 continue;
             } else {
-                console.log("Failed!");
-                // projectTitle = "";
+                // console.log("Failed!");
+                projectTitle = "";
+                index++;
             }
         } else {
             projectTitle = note.project;
-            projectIndex++;
-            index = 0;
-
-            if (inputIndex == projectIndex) {
-                tmpArray.push(note);
-            }
-            
+            index++;
             // console.log("index: " + index);
         }   
     }

@@ -1,11 +1,15 @@
-function ProjectArrays(LibraryData) {
-    console.log("ProjectArrays Function Called.")
+function SortProjectArrays(LibraryData) {
+    console.log("Sort Function Called.")
 
     console.log(LibraryData);
-    LibraryData.sort((a, b) => (a.project > b.project) ? 1 : -1);
-    console.log(LibraryData);
+    const first = "Default";
+    // LibraryData.sort((a, b) => (a.project > b.project) ? 1 : -1);
+    LibraryData.sort((a, b) => { 
+        return a.project == first ? -1: b.project == first ? 1 : 0;
+    });
+    // console.log(LibraryData);
 
     return LibraryData;
 }
 
-export default ProjectArrays;
+export default SortProjectArrays;

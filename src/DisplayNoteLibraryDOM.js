@@ -48,7 +48,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
             noteDescription.textContent = note.description;
 
             // if there is a list we need to create DOM elements to match the length
-            console.log("NoteListLength: " + note.list.length);
+            // console.log("NoteListLength: " + note.list.length);
             if (note.list.length > 0) {
 
                 var listContainer = document.createElement('ul');

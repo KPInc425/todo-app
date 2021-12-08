@@ -1,4 +1,5 @@
 import SortProjectArrays from "./SortProjectArrays";
+// import { ProjectCardsAddEventListeners } from "./AddEventListeners.js";
 
 function DisplayProjectsDOM(noteLibraryData) {
     console.log("DisplayProjectsDOM function called")
@@ -16,26 +17,37 @@ function DisplayProjectsDOM(noteLibraryData) {
         mainContainer.innerHTML = "";
 
         // Create Project Arrays
+        // const sortedNoteLibraryData = noteLibraryData;
         const sortedNoteLibraryData = SortProjectArrays(noteLibraryData);
         console.log(sortedNoteLibraryData);
 
+
+        // let obj = sortedNoteLibraryData.find(o => o.project === 'Default');
+        // console.log(obj);
+
+        // let obj = sortedNoteLibraryData.find((o, i) => {
+        //     if (o.project === 'Default') {
+
+        //     }
+        // })
+
         let projectTitleString = "";
 
-        console.log(projectTitleString);
+        // console.log(projectTitleString);
 
         // Display each note in library that matches project clicked on
         for (let note of sortedNoteLibraryData) {
             //check if previous todoNote had the same projectName
             if (index === 0) {
                 projectTitleString = note.project;
-               console.log(projectTitleString);
+            //    console.log(projectTitleString);
             } else if (note.project === projectTitleString) {
-                console.log("CONTINUE");
+                // console.log("CONTINUE");
                 continue;
             // Change projectTitleString if its not the same as previous
             } else {
                 projectTitleString = note.project;
-                console.log(projectTitleString);
+                // console.log(projectTitleString);
             }
 
             // Display project
@@ -59,12 +71,12 @@ function DisplayProjectsDOM(noteLibraryData) {
             btnContainer.classList.add('btnContainer');
             const btnEdit = document.createElement('button');
             btnEdit.textContent = "Edit";
-            btnEdit.classList.add('btnProjectEdit');
+            btnEdit.classList.add('btnEditProject');
             btnEdit.setAttribute('data-index', index);
 
             const btnDelete = document.createElement('button');
             btnDelete.textContent = "Delete";
-            btnDelete.classList.add('btnDelete');
+            btnDelete.classList.add('btnDeleteProject');
             btnDelete.setAttribute('data-index', index);
 
             btnContainer.appendChild(btnEdit);
@@ -86,6 +98,7 @@ function DisplayProjectsDOM(noteLibraryData) {
 
         const projectCard = document.createElement('div');
         projectCard.classList.add('card');
+        projectCard.classList.add('projectCard');
         projectCard.setAttribute('data-index', index);
 
         const projectInfoContainer = document.createElement('div');
@@ -103,12 +116,12 @@ function DisplayProjectsDOM(noteLibraryData) {
         btnContainer.classList.add('btnContainer');
         const btnEdit = document.createElement('button');
         btnEdit.textContent = "Edit";
-        btnEdit.classList.add('btnEdit');
+        btnEdit.classList.add('btnEditProject');
         btnEdit.setAttribute('data-index', index);
 
         const btnDelete = document.createElement('button');
         btnDelete.textContent = "Delete";
-        btnEdit.classList.add('btnDelete');
+        btnDelete.classList.add('btnDeleteProject');
         btnDelete.setAttribute('data-index', index);
 
         btnContainer.appendChild(btnEdit);

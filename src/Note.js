@@ -1,16 +1,17 @@
 import GenerateUniqueID from "./GenerateUniqueID.js";
 
-function Note(title, description, list, dueDate, priority, project) {
+function Note(title, description, list, dateCreated, dueDate, priority, project, masterIndex) {
     //testing 
-    console.log("NOTE HAS BEEN CALLED/LOADED.")
+    const todaysDate = Date().split(' ', 5).join(' ');
+    console.log("NOTE Function HAS BEEN CALLED/LOADED.")
     title = title;
-    description = description;
+    description = description || "Description goes here...";
     list = list;
-    const dateCreated = Date().split(' ', 5).join(' ');
-    dueDate = dueDate;
-    priority = priority;
-    project = project;
-    const masterIndex = GenerateUniqueID();
+    dateCreated = dateCreated || todaysDate;
+    dueDate = dueDate || addDays(todaysDate, 1);
+    priority = priority || "LOW";
+    project = project || "Default";
+    masterIndex = masterIndex || GenerateUniqueID();
 
 
     return {
@@ -24,5 +25,11 @@ function Note(title, description, list, dueDate, priority, project) {
         masterIndex,
     };
 };
+
+function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
 
 export default Note;
