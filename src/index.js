@@ -49,6 +49,8 @@ const app = (() => {
     DisplayNavDOM(noteLibraryData);
     DisplayProjectsDOM(noteLibraryData);
     ProjectCardsAddEventListeners(noteLibraryData);
+
+    
     // DisplayNoteLibraryDOM(noteLibraryData);
     // console.log("noteLibraryData.length " + noteLibraryData.length);
 

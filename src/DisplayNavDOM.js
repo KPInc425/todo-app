@@ -1,4 +1,4 @@
-import { NewTodoAddEventListeners } from "./AddEventListeners.js";
+import { NewTodoAddEventListeners, ReturnToProjectsAddEventListeners } from "./AddEventListeners.js";
 
 function DisplayNavDOM(libraryData) {
     console.log("DisplayNavDOM function Called");
@@ -18,8 +18,9 @@ function DisplayNavDOM(libraryData) {
     const btnContainer = document.createElement('div');
     btnContainer.classList.add('flexContainerNav');
 
-    const btn1 = document.createElement('button');
-    btn1.textContent = "btn1";
+    const btnProjects = document.createElement('button');
+    btnProjects.id = "btnProjects";
+    btnProjects.textContent = "Projects";   // Perhaps change text to Home?
     
 
     const btn2 = document.createElement('button');
@@ -38,12 +39,13 @@ function DisplayNavDOM(libraryData) {
     btnContainer.appendChild(btnNewTodo);
     btnContainer.appendChild(btn3);
     btnContainer.appendChild(btn2);
-    btnContainer.appendChild(btn1);
+    btnContainer.appendChild(btnProjects);
     navContainer.appendChild(btnContainer);
     
     body.appendChild(navContainer);
 
     NewTodoAddEventListeners(libraryData);
+    ReturnToProjectsAddEventListeners();
 
 
 }

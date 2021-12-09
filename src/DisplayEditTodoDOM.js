@@ -1,10 +1,9 @@
-import { AddEditedTodoNoteEventListener } from "./AddEventListeners";
-
-function DisplayEditTodo(libraryData, index) {
+function DisplayEditTodo() {
     const mainContainer = document.querySelector('#content');
 
     const editTodoContainer = document.createElement('div');
     editTodoContainer.classList.add("todoContainer");
+    editTodoContainer.id = "editTodoContainer";
 
     //Form Label
     const headerItemContainer = document.createElement('div');
@@ -47,7 +46,7 @@ function DisplayEditTodo(libraryData, index) {
     inputListLabel.textContent = "List item";
     const inputList = document.createElement('input');
     inputList.type = "text";
-    inputList.id = "inputTodoList";
+    inputList.classList.add("inputTodoListItem");
 
     const btnAddNewListItem = document.createElement('button');
     btnAddNewListItem.textContent = "+";
@@ -97,6 +96,10 @@ function DisplayEditTodo(libraryData, index) {
     btnAdd.id = "btnAddEditedTodo";
     btnAdd.textContent = "Get it Done!";
 
+    const btnCancel = document.createElement('button');
+    btnCancel.id = "btnCancelEditTodo";
+    btnCancel.textContent = "Cancel";
+
     // Appending elements to DOM
 
     editTodoContainer.appendChild(headerItemContainer);
@@ -107,9 +110,8 @@ function DisplayEditTodo(libraryData, index) {
     editTodoContainer.appendChild(priorityItemContainer);
     editTodoContainer.appendChild(projectItemContainer);
     editTodoContainer.appendChild(btnAdd);
+    editTodoContainer.appendChild(btnCancel);
     mainContainer.appendChild(editTodoContainer);
-    AddEditedTodoNoteEventListener();
-
 }
 
 export default DisplayEditTodo;

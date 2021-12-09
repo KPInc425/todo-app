@@ -19,7 +19,7 @@ function DisplayProjectsDOM(noteLibraryData) {
         // Create Project Arrays
         // const sortedNoteLibraryData = noteLibraryData;
         const sortedNoteLibraryData = SortProjectArrays(noteLibraryData);
-        console.log(sortedNoteLibraryData);
+        // console.log(sortedNoteLibraryData);
 
 
         // let obj = sortedNoteLibraryData.find(o => o.project === 'Default');

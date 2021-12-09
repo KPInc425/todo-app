@@ -1,7 +1,8 @@
 import DisplayNoteLibraryDOM from "./DisplayNoteLibraryDOM";
 import Note from "./Note";
 import SplitArray from "./SplitArray";
-import SortNoteArrays from "./SortNoteArrays.js";
+import SortProjectArrays from "./SortProjectArrays.js";
+import { populateStorage } from "./CheckLocalStorage";
 
 function CreateNewTodo(...args) {
     const libraryData = args[0];
@@ -16,11 +17,12 @@ function CreateNewTodo(...args) {
         // console.log(newTodo);
 
         libraryData.push(newTodo);
+        populateStorage(libraryData);
 
         // console.log(libraryData);
 
         // Sort Array after push
-        const sortedNoteLibraryData = SortNoteArrays(libraryData);
+        const sortedNoteLibraryData = SortProjectArrays(libraryData);
 
         const projectTodoArray = SplitArray(sortedNoteLibraryData, 0);
         // console.log(projectTodoArray);

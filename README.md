@@ -8,6 +8,7 @@ List should be able to be separated by project, ability to see all todos in each
 Sessions should be saved locally.
 
 #Todo
+-TRY MOVING MORE FUNCTIONS INTO INDEX.JS 
 -Add Cancel button to new Todo and Editable form.
 -Format editable todo form 
 -add functionality to unused buttons
@@ -16,6 +17,8 @@ Sessions should be saved locally.
 -Styling
 -imagery/logo
 -Add new items to list logic
+-Display project list when editing todo note
+-use radio buttons for choosing priority (add custom for customized priority)
 
 
 -Refactor AddEventListeners into single module, rather than export each add event. 

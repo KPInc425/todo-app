@@ -86,7 +86,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
 
             const btnDelete = document.createElement('button');
             btnDelete.textContent = "Delete";
-            btnEdit.classList.add('btnDelete');
+            btnDelete.classList.add('btnDelete');
             btnDelete.setAttribute('data-index', index);
 
             // Add Checklist/Lists
@@ -121,8 +121,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
 
     body.appendChild(mainContainer);
 
-    // Add functionality to Edit buttons on todo cards
-    EditTodoButtonAddEventListeners(noteLibraryData);
+    
 
 
 

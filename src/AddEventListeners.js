@@ -11,12 +11,12 @@ function ProjectCardsAddEventListeners(libraryData) {
     // Might want to change this to exclude the btnContainer as it fires when they get clicked.
     const projectCardNodeArray = document.querySelectorAll('.projectCard');
     
-    console.log(projectCardNodeArray);
+    // console.log(projectCardNodeArray);
     
     projectCardNodeArray.forEach((div) => {
         div.addEventListener('click', () => {
             let projectIndex = div.getAttribute('data-index');
-            console.log(projectIndex);
+            // console.log(projectIndex);
 
             // Split Array based on project
             // console.log(libraryData);
@@ -26,6 +26,9 @@ function ProjectCardsAddEventListeners(libraryData) {
             
             // Display notes related to project
             DisplayNoteLibraryDOM(projectNoteArray);
+            DeleteTodoButtonAddEventListeners();
+            // Add functionality to Edit buttons on todo cards
+            EditTodoButtonAddEventListeners(projectNoteArray);
         })
     });
 };
@@ -39,7 +42,9 @@ function NewTodoAddEventListeners(libraryData) {
         console.log("Click newTodo!");
 
         //call module to display editable note
-        DisplayAddNewTodo(libraryData);
+        DisplayAddNewTodo();
+    
+        AddNewTodoAddEventListener(libraryData);
         
 
     });
@@ -52,8 +57,8 @@ function AddNewTodoAddEventListener(libraryData) {
     btnAddTodo.addEventListener('click', () => {
         const inputNewTodo = document.getElementById('inputNewTodo');
         
-        // console.log("Library Data BeloW");
-        // console.log(libraryData);
+        console.log("Library Data BeloW");
+        console.log(libraryData);
 
         if (inputNewTodo.value !== "") {
             CreateNewTodo(libraryData, inputNewTodo.value);
@@ -61,10 +66,26 @@ function AddNewTodoAddEventListener(libraryData) {
         
     });
 
+    const btnCancelAddTodo = document.getElementById('btnCancelAddTodo');
+    const toDoContainer = document.getElementById('NewTodoContainer');
+    btnCancelAddTodo.addEventListener('click', () => {
+        console.log("Clicked Cancel!");
+        toDoContainer.style.display = "none";
+    })
+
+    
+}
+
+function ReturnToProjectsAddEventListeners() {
+    const btnProjectReload = document.getElementById('btnProjects');
+    btnProjectReload.addEventListener('click', () => {
+        location.reload();
+    })
+    
 }
 
 function EditTodoButtonAddEventListeners(libraryData) {
-    const editBtnNodeArray =document.querySelectorAll('.btnEdit');
+    const editBtnNodeArray = document.querySelectorAll('.btnEdit');
     // console.log(editBtnNodeArray);
 
     editBtnNodeArray.forEach((btn) => {
@@ -75,11 +96,12 @@ function EditTodoButtonAddEventListeners(libraryData) {
 
             // retreive edited note index
             let index = btn.getAttribute('data-index');
-            // console.log("Index: " + index);
+            console.log("Index: " + index);
             // console.log("libraryData Below");
             // console.log(libraryData);
 
-            DisplayEditTodo(libraryData, index);
+            DisplayEditTodo();
+            AddEditedTodoNoteEventListener(libraryData, index);
             // addListItemEventListener();
             
 
@@ -95,13 +117,25 @@ function EditTodoButtonAddEventListeners(libraryData) {
     });
 }
 
-function AddEditedTodoNoteEventListener(noteLibraryData) {
-    const btnAddEditedToNote = document.querySelector('#btnAddEditedTodo');
-    btnAddEditedToNote.addEventListener('click', () => {
-            console.log("Add Button Clicked!");
-            // Add edited todo note data to noteLibrary
+function AddEditedTodoNoteEventListener(noteLibraryData, index) {
+    const editTodoContainer = document.getElementById('editTodoContainer');
+    const btnAddEditedToDoNote = document.querySelector('#btnAddEditedTodo');
+    const btnCancelAddEditedToDoNote = document.getElementById('btnCancelEditTodo');
 
-            AddEditedTodoNote(noteLibraryData);
+    btnAddEditedToDoNote.addEventListener('click', () => {
+        console.log("Add Button Clicked!");
+        // Add edited todo note data to noteLibrary
+        console.log(noteLibraryData);
+
+        AddEditedTodoNote(noteLibraryData, index);
+        console.log(noteLibraryData);
+
+        editTodoContainer.remove();
+        
+    })
+
+    btnCancelAddEditedToDoNote.addEventListener('click', () => {
+        editTodoContainer.remove();
     })
 
 }
@@ -167,5 +201,8 @@ export {
     DeleteProjectButtonAddEventListeners,
     EditProjectButtonAddEventListeners,
     AddEditedTodoNoteEventListener,
+    DeleteTodoButtonAddEventListeners,
+    ReturnToProjectsAddEventListeners,
+
 };
 

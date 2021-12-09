@@ -10,7 +10,7 @@ function SplitArray(libraryData, inputIndex) {
     let projectIndex = 0;
     let index = 0;
     for (let note of libraryData) {
-        console.log(note);
+        // console.log(note);
 
         //First Iteration
         if (projectTitle == "") {
@@ -18,7 +18,7 @@ function SplitArray(libraryData, inputIndex) {
         }
         
         // console.log("projectTitle: " + projectTitle);
-        console.log(note.project);
+        // console.log(note.project);
         if (projectTitle == note.project) {
             // console.log("Match!");
             // console.log("inputIndex: " + inputIndex);
@@ -32,7 +32,7 @@ function SplitArray(libraryData, inputIndex) {
                 // console.log("Pushed to Array");
                 continue;
             } else {
-                console.log("Failed!");
+                // console.log("Failed!");
                 // projectTitle = "";
             }
         } else {
