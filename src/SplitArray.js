@@ -1,3 +1,5 @@
+import SortNoteArrays from "./SortNoteArrays";
+
 function SplitArray(libraryData, inputIndex) {
     console.log("SplitArray Function Called.");
     // console.log("INPUT INDEX: " + inputIndex);
@@ -47,6 +49,8 @@ function SplitArray(libraryData, inputIndex) {
             // console.log("index: " + index);
         }   
     }
+
+    tmpArray = SortNoteArrays(tmpArray);
 
     return tmpArray;
 

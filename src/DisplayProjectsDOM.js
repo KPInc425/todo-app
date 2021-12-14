@@ -1,9 +1,11 @@
 import SortProjectArrays from "./SortProjectArrays";
 // import { ProjectCardsAddEventListeners } from "./AddEventListeners.js";
 
-function DisplayProjectsDOM(noteLibraryData) {
+function DisplayProjectsDOM() {
     console.log("DisplayProjectsDOM function called")
     // console.log(noteLibraryData);
+    // console.log(window.noteLibraryData);
+    const noteLibraryData = window.noteLibraryData;
 
     const body = document.querySelector('body');
     
@@ -17,37 +19,28 @@ function DisplayProjectsDOM(noteLibraryData) {
         mainContainer.innerHTML = "";
 
         // Create Project Arrays
-        // const sortedNoteLibraryData = noteLibraryData;
+        console.log(noteLibraryData)
         const sortedNoteLibraryData = SortProjectArrays(noteLibraryData);
-        // console.log(sortedNoteLibraryData);
+        console.log(sortedNoteLibraryData);
 
-
-        // let obj = sortedNoteLibraryData.find(o => o.project === 'Default');
-        // console.log(obj);
-
-        // let obj = sortedNoteLibraryData.find((o, i) => {
-        //     if (o.project === 'Default') {
-
-        //     }
-        // })
 
         let projectTitleString = "";
 
-        // console.log(projectTitleString);
+        console.log(projectTitleString);
 
         // Display each note in library that matches project clicked on
         for (let note of sortedNoteLibraryData) {
             //check if previous todoNote had the same projectName
             if (index === 0) {
                 projectTitleString = note.project;
-            //    console.log(projectTitleString);
+            console.log(projectTitleString);
             } else if (note.project === projectTitleString) {
                 // console.log("CONTINUE");
                 continue;
             // Change projectTitleString if its not the same as previous
             } else {
                 projectTitleString = note.project;
-                // console.log(projectTitleString);
+                console.log(projectTitleString);
             }
 
             // Display project

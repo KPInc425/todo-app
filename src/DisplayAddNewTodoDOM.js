@@ -1,6 +1,3 @@
-
-import { AddNewTodoAddEventListener } from "./AddEventListeners.js"
-
 function DisplayAddNewTodo() {
     const toDoContainer = document.querySelector('.todoContainer');
     //Prevents duplication of element, by resetting visibility

@@ -1,6 +1,8 @@
 import { NewTodoAddEventListeners, ReturnToProjectsAddEventListeners } from "./AddEventListeners.js";
 
-function DisplayNavDOM(libraryData) {
+function DisplayNavDOM() {
+    //Fetch Master Library data
+    // const libraryData = window.noteLibraryData;
     console.log("DisplayNavDOM function Called");
 
     const body = document.querySelector('body');
@@ -44,7 +46,7 @@ function DisplayNavDOM(libraryData) {
     
     body.appendChild(navContainer);
 
-    NewTodoAddEventListeners(libraryData);
+    NewTodoAddEventListeners();
     ReturnToProjectsAddEventListeners();
 
 

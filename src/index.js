@@ -6,12 +6,14 @@ import { ProjectCardsAddEventListeners, EditProjectButtonAddEventListeners, Dele
 import './reset.css';
 import './style.css';
 import { storageAvailable, setLibrary, populateStorage } from "./CheckLocalStorage.js";
+import TodoLibrary from "./TodoLibrary.js";
 
 const app = (() => {
     console.log("TESTING: KPINC425");
 
-    let noteLibraryData = [];
+    let localLibraryData = TodoLibrary();
 
+    // console.log(localLibraryData);
 
     //Testing
     // let list = ["listItem1", "listItem2", "listItem3", "listItem4"];
@@ -38,17 +40,21 @@ const app = (() => {
 
     if (localStorage.length > 0) {
         // If storage IS already populated
-        noteLibraryData = setLibrary();
+        localLibraryData = setLibrary();
     } else {
         // If Storage is NOT already populated
-        noteLibraryData = [testNote1, testNote2, testNote3, testNote4];
-        populateStorage(noteLibraryData);
+        localLibraryData = [testNote1, testNote2, testNote3, testNote4];
+        populateStorage(localLibraryData);
     }
 
+    //Set Master Library
+    TodoLibrary(localLibraryData);
+
+
     //First Display
-    DisplayNavDOM(noteLibraryData);
-    DisplayProjectsDOM(noteLibraryData);
-    ProjectCardsAddEventListeners(noteLibraryData);
+    DisplayNavDOM();
+    DisplayProjectsDOM();
+    ProjectCardsAddEventListeners();
 
     
     // DisplayNoteLibraryDOM(noteLibraryData);

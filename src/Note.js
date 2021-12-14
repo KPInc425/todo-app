@@ -3,7 +3,7 @@ import GenerateUniqueID from "./GenerateUniqueID.js";
 function Note(title, description, list, dateCreated, dueDate, priority, project, masterIndex) {
     //testing 
     const todaysDate = Date().split(' ', 5).join(' ');
-    console.log("NOTE Function HAS BEEN CALLED/LOADED.")
+    // console.log("NOTE Function HAS BEEN CALLED/LOADED.")
     title = title;
     description = description || "Description goes here...";
     list = list;

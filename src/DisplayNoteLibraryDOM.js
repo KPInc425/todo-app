@@ -1,7 +1,4 @@
-import { EditTodoButtonAddEventListeners } from "./AddEventListeners.js";
-
-
-function DisplayNoteLibraryDOM(noteLibraryData) {
+function DisplayNoteLibraryDOM(noteLibraryData, projectIndex) {
     console.log("DisplayNoteDOM function Called.");
     // console.log(noteLibraryData);
 
@@ -25,6 +22,7 @@ function DisplayNoteLibraryDOM(noteLibraryData) {
         projectTitleLabelContainer.classList.add("labelContainer");
         const projectTitleLabel = document.createElement('h2');
         projectTitleLabel.classList.add("h2Title");
+        projectTitleLabel.setAttribute('data-index', projectIndex);
         projectTitleLabel.textContent = noteLibraryData[0].project;
 
         projectTitleLabelContainer.appendChild(projectTitleLabel);
